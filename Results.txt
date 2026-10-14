@@ -1,0 +1,76 @@
+# CarbonGlobe Project Results
+
+## 1. Model Performance Comparison
+
+The following scores are taken from the project report. Lower scores are better according to the report.
+
+| Model / Result | Reported Score | Absolute Reduction |
+|---|---:|---:|
+| Initial baseline | 0.238 | — |
+| Best recorded optimized result | 0.095 | 0.143 |
+| Latest displayed optimized result | 0.101 | 0.137 |
+
+## 2. Improvement Calculation
+
+### Best Recorded Optimized Result
+
+Baseline score = 0.238  
+Optimized score = 0.095
+
+Absolute reduction:
+
+`0.238 - 0.095 = 0.143`
+
+Relative reduction:
+
+`((0.238 - 0.095) / 0.238) * 100 ≈ 60.1%`
+
+### Latest Displayed Optimized Result
+
+Baseline score = 0.238  
+Latest displayed score = 0.101
+
+Absolute reduction:
+
+`0.238 - 0.101 = 0.137`
+
+Relative reduction:
+
+`((0.238 - 0.101) / 0.238) * 100 ≈ 57.6%`
+
+## 3. Interpretation
+
+The project report records improved scores for the optimized approach compared with the initial baseline. The best recorded optimized score is 0.095, while the latest displayed optimized score is 0.101. These are distinct reported results and should not be presented as the same experiment.
+
+## 4. Prediction Outputs
+
+The project contains two prediction files:
+
+- `submission_1.csv`
+- `submission_2.csv`
+
+The report describes predictions for year-40 forest height and above-ground biomass (AGB) under SSP126 and SSP585 scenarios. It reports 185,130 rows with the columns `id`, `height`, and `agb`.
+
+## 5. Optimization Techniques
+
+The optimized approach described in the report uses:
+
+- Climate and ecological feature engineering.
+- Chronosequence anchoring based on forest age + 40 years, capped at 500.
+- Delta/residual, direct, log-ratio, and random-forest-style prediction strategies.
+- Ensemble weighting.
+- Scenario-dependent anchor shrinkage.
+- Prediction clipping.
+
+## 6. Limitations
+
+The report identifies the following limitations:
+
+- Possible validation optimism from using validation data for model selection and ensemble weighting.
+- Manually selected shrinkage and clipping parameters.
+- A need for more ablation studies.
+- Differences between validation-time model selection and final model refitting.
+
+## Note on Metrics
+
+The scores in this document are transcribed from the project report and have not been independently recalculated from the prediction CSVs. The report describes the evaluation metric as **mean squared relative error**. Do not label these values as RMSE unless another authoritative project result explicitly identifies them as RMSE.
